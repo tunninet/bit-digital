@@ -1,0 +1,23 @@
+{
+    "script": "#!/bin/bash\n\n/tn/5Net/raid-gold/private-git-code/hpc/wrapper/job_wrapper.py \\\n  --job-id=\"$SLURM_JOB_ID\" \\\n  --node=\"$(hostname)\" \\\n  --cmd=\"sleep 30\"",
+    "job": {
+      "name": "JOB_PLACEHOLDER",
+      "account": "root",
+      "partition": "PARTITION_PLACEHOLDER",
+      "time_limit": {
+        "hours": 0,
+        "minutes": 5,
+        "seconds": 0
+      },
+      "tasks": 1,
+      "memory_per_cpu": {
+        "units": "MB",
+        "value": 100
+      },
+      "environment": [
+        "PATH=/usr/bin/:/bin/"
+      ],
+      "current_working_directory": "/tmp/"
+    }
+  }
+  

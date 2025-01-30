@@ -1,0 +1,8 @@
+# requirements.txt
+
+# Pinned requests & urllib3 below 2.0.0 so that requests_unixsocket works properly
+requests<2.31
+urllib3<2.0.0
+
+# The unixsocket adapter for requests
+requests-unixsocket==0.3.0

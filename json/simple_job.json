@@ -1,0 +1,23 @@
+{
+    "script": "#!/bin/bash\necho \"Hello from Slurm on $(hostname)\"\nsleep 5\necho \"Done!\"",
+    "job": {
+      "name": "TestSimpleJob",
+      "account": "root",
+      "partition": "Tunninet",
+      "time_limit": {
+        "hours": 0,
+        "minutes": 5,
+        "seconds": 0
+      },
+      "tasks": 1,
+      "memory_per_cpu": {
+        "units": "MB",
+        "value": 100
+      },
+      "environment": [
+        "PATH=/usr/bin/:/bin/"
+      ],
+      "current_working_directory": "/tmp/"
+    }
+  }
+  
