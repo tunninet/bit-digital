@@ -1,8 +1,16 @@
 # requirements.txt
 
-# Pinned requests & urllib3 below 2.0.0 so that requests_unixsocket works properly
+# For Slurm REST API interactions:
 requests<2.31
 urllib3<2.0.0
-
-# The unixsocket adapter for requests
 requests-unixsocket==0.3.0
+
+# For HPC tasks
+# (Optional) We assume you might do numeric tasks or need system info:
+numpy>=1.21.0
+psutil>=5.8.0
+
+# For NUMA investigation:
+-e git+https://github.com/eedalong/pynuma.git#egg=py-libnuma
+
+

@@ -1,0 +1,8 @@
+==== test_run_threads ====
+Command: ./mytool.py run tasks/example.txt --max-workers=2
+[Threads] Expected runtime: 9.00 s
+[Threads] Actual runtime:   9.00 s
+[Threads] Difference:       0.00 s
+
+==== End of test_run_threads ====
+

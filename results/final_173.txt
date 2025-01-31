@@ -1,0 +1,6 @@
+=== HPC Job 173 Final Report ===
+Total HPC Elapsed: 00:00:02
+Sum of prime counts: 2262
+
+Check /tn/5Net/raid-gold/private-git-code/hpc/logs/final_173_aggregated.log for subrange-sorted partial logs.
+Check /tn/5Net/raid-gold/private-git-code/hpc/results/final_173_primes_only.txt for global prime list.

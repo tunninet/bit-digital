@@ -1,0 +1,26 @@
+{
+  "script": "#!/bin/bash\nexec /tn/5Net/raid-gold/private-git-code/hpc/scripts/hpc_job.sh\n",
+  "job": {
+    "name": "SinglePrimeFinder_abc",
+    "partition": "Tunninet",
+    "time_limit": {
+      "hours": 0,
+      "minutes": 20,
+      "seconds": 0
+    },
+    "nodes": 4,
+    "tasks": 64,
+    "cpus_per_task": 1,
+    "standard_output": "/tn/5Net/raid-gold/private-git-code/hpc/logs/slurm-%j.out",
+    "standard_error": "/tn/5Net/raid-gold/private-git-code/hpc/logs/slurm-%j.err",
+    "environment": [
+      "PATH=/usr/bin/:/bin/",
+      "TOTAL_CORES=64",
+      "RANGE_START=1",
+      "RANGE_END=20000",
+      "RUN_ID=RUN_ID_PLACEHOLDER"
+    ],
+    "current_working_directory": "/tmp/"
+  }
+}
+

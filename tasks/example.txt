@@ -1,0 +1,6 @@
+# Left = Task, Middle = Duration, Right (Optional) = Dependancy
+A,3
+B,2,A
+C,5,A
+D,1,B C
+

@@ -1,0 +1,10 @@
+==== test_inspect-numa ====
+Command: ./mytool.py inspect-numa
+=== Investigating NUMA Domains ===
+System has 1 NUMA node(s).
+ - Node 0, distance_from_node0=10, CPUs=[0, 1, 2, 3]
+==================================
+
+
+==== End of test_inspect-numa ====
+

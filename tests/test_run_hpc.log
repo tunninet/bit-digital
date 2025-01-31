@@ -1,0 +1,8 @@
+==== test_run_hpc ====
+Command: ./mytool.py run-hpc tasks/example.txt --max-procs=2
+[HPC] Expected runtime: 9.00 s
+[HPC] Actual runtime:   9.05 s
+[HPC] Difference:       0.05 s
+
+==== End of test_run_hpc ====
+

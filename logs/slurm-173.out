@@ -1,0 +1,8 @@
+DEBUG: RANGE_START=1
+DEBUG: RANGE_END=20000
+DEBUG: RUN_ID=Test
+Multi-node HPC job started on partition=Tunninet, job_id=173
+Nodes=4, tasks=64
+Range=[1..20000], run_id=Test
+Partial rank logs found in /tn/5Net/raid-gold/private-git-code/hpc/logs
+✅ HPC job finished. Logs in /tn/5Net/raid-gold/private-git-code/hpc/logs, final results in /tn/5Net/raid-gold/private-git-code/hpc/results/final_173.txt

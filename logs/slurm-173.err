@@ -1,0 +1,36 @@
++ source /tn/5Net/raid-gold/virtual-python-dirs/hpc-public/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ '[' linux-gnu = cygwin ']'
+++ '[' linux-gnu = msys ']'
+++ export VIRTUAL_ENV=/tn/5Net/raid-gold/virtual-python-dirs/hpc-public
+++ VIRTUAL_ENV=/tn/5Net/raid-gold/virtual-python-dirs/hpc-public
+++ _OLD_VIRTUAL_PATH=/usr/bin/:/bin/
+++ PATH=/tn/5Net/raid-gold/virtual-python-dirs/hpc-public/bin:/usr/bin/:/bin/
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(hpc-public) '
+++ export PS1
+++ VIRTUAL_ENV_PROMPT='(hpc-public) '
+++ export VIRTUAL_ENV_PROMPT
+++ hash -r
++ LOGS_DIR=/tn/5Net/raid-gold/private-git-code/hpc/logs
++ RESULTS_DIR=/tn/5Net/raid-gold/private-git-code/hpc/results
++ echo 'DEBUG: RANGE_START=1'
++ echo 'DEBUG: RANGE_END=20000'
++ echo 'DEBUG: RUN_ID=Test'
++ echo 'Multi-node HPC job started on partition=Tunninet, job_id=173'
++ echo 'Nodes=4, tasks=64'
++ echo 'Range=[1..20000], run_id=Test'
++ srun -n 64 python /tn/5Net/raid-gold/private-git-code/hpc/modules/multi_node_prime_finder.py 1 20000 Test /tn/5Net/raid-gold/private-git-code/hpc/logs
++ compgen -G '/tn/5Net/raid-gold/private-git-code/hpc/logs/job_173_rank_*.log'
++ echo 'Partial rank logs found in /tn/5Net/raid-gold/private-git-code/hpc/logs'
++ echo '✅ HPC job finished. Logs in /tn/5Net/raid-gold/private-git-code/hpc/logs, final results in /tn/5Net/raid-gold/private-git-code/hpc/results/final_173.txt'

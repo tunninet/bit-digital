@@ -1,0 +1,8 @@
+==== test_chunked_local ====
+Command: ./mytool.py chunked-primes 1 1000 --chunks=4 --merge-results
+[Chunked-Primes] run_id=1738366154, subranges = [(1, 250), (251, 500), (501, 750), (751, 1000)]
+[Local HPC] subranges done in 12.06 s.
+[Aggregator] Merged 4 chunk files into /tn/5Net/raid-gold/private-git-code/hpc/./results/final_1738366154.txt, then deleted them.
+
+==== End of test_chunked_local ====
+

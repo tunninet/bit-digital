@@ -1,0 +1,6 @@
+==== test_validate ====
+Command: ./mytool.py validate tasks/example.txt
+Tasks are valid. Expected runtime: 9.00 s.
+
+==== End of test_validate ====
+
