@@ -75,6 +75,17 @@ Demonstrates prime range processing. Two modes are supported:
 
 ## How It Works
 
+### Schema
+
+- **Local HPC:**
+we must have a task name, run time and any dependancies.
+We also simulate creating primes (a real world example) in chunks to see how this speeds it up. no name or dependancy, range only.
+
+- **Slurm HPC:**
+We again simulate primes and have a task name and instead calculated actual run time.
+No dependancy needed with this HPC example of chunking by the number of cores in the Slurm compute partition.
+(Future) It can be tailored with a new template to also pass allowed runtime or to take dependency jobs as well schedule wise.
+
 ### Local Concurrency
 
 - **Tasks File Processing:**  
