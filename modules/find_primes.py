@@ -1,7 +1,12 @@
+#!/tn/5Net/raid-gold/virtual-python-dirs/hpc-public/bin/python3.12
 """
-A simple prime-finding module invoked as 'python -m modules.find_primes start end'.
+A simple prime‐finding module invoked as 'python -m modules.find_primes START END'.
 
-If $RESULT_FILE is set, we append the prime count message to that file as well.
+If $RESULT_FILE is set, we also append the prime count message to that file.
+Now, in addition to printing the count, this script prints the list of primes on a new line
+in the format:
+  Primes=[p1, p2, p3, ...]
+This output is expected by the aggregator.
 """
 import os
 import sys
@@ -27,14 +32,19 @@ def main():
 
     start = int(sys.argv[1])
     end = int(sys.argv[2])
-    count = 0
+    primes = []
     for num in range(start, end + 1):
         if is_prime(num):
-            count += 1
+            primes.append(num)
+    count = len(primes)
 
+    # Print the count and then the list of primes
     msg = f"Found {count} prime(s) in range [{start}..{end}].\n"
     print(msg, end="")
+    # The aggregator expects a line beginning with "Primes="
+    print(f"Primes={primes}")
 
+    # Optionally, if RESULT_FILE is set, append the count (you could also append the primes if desired)
     rf = os.getenv("RESULT_FILE")
     if rf:
         try:

@@ -4,7 +4,7 @@
 # 1) Merge logs/job_<JOBID>_rank_*.log in subrange order => logs/final_<JOBID>_aggregated.log
 # 2) Sum prime counts => TOTAL_PRIMES
 # 3) Sort all primes => results/final_<JOBID>_primes_only.txt
-# 4) HPC Elapsed from sacct => stored in results/final_<JOBID>.txt
+# 4) Get HPC elapsed time from sacct and create final report at results/final_<JOBID>.txt
 
 JOBID="$1"
 if [ -z "$JOBID" ]; then
@@ -26,7 +26,6 @@ ALL_PRIMES_TMP=$(mktemp)
 TOTAL_PRIMES=0
 
 for f in "${RANK_LOGS[@]}"; do
-  # parse line with subrange=..., found=NN
   line=$(grep -m1 "subrange=" "$f")
   s=$(echo "$line" | sed -E 's/.*subrange=\[([0-9]+)\.\.[0-9]+\].*/\1/')
   e=$(echo "$line" | sed -E 's/.*subrange=\[[0-9]+\.\.([0-9]+)\].*/\1/')
@@ -35,17 +34,13 @@ for f in "${RANK_LOGS[@]}"; do
   [[ "$e" =~ ^[0-9]+$ ]] || e=0
   [[ "$n" =~ ^[0-9]+$ ]] || n=0
   TOTAL_PRIMES=$((TOTAL_PRIMES + n))
-
   echo -e "${s}\t${e}\t${n}\t${f}\t${line}" >> "$TMPFILE_SORT"
-
-  # parse primes
   primes_line=$(grep "Primes=" "$f")
   prime_list=$(echo "$primes_line" | sed -E 's/.*Primes=\[([^]]*)\].*/\1/')
   echo "$prime_list" | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
     | grep -E '^[0-9]+$' >> "$ALL_PRIMES_TMP"
 done
 
-# Sort subrange => logs/final_<JOBID>_aggregated.log
 SORTED=$(sort -k1,1n "$TMPFILE_SORT")
 AGG_LOG="$LOGS_DIR/final_${JOBID}_aggregated.log"
 rm -f "$AGG_LOG"
@@ -56,12 +51,10 @@ while IFS=$'\t' read -r start_val end_val found_val fname line; do
   echo >> "$AGG_LOG"
 done <<< "$SORTED"
 
-# Sort all primes => results/final_<JOBID>_primes_only.txt
 mkdir -p "$RESULTS_DIR"
 ALL_PRIMES_SORTED="$RESULTS_DIR/final_${JOBID}_primes_only.txt"
 sort -n "$ALL_PRIMES_TMP" | uniq > "$ALL_PRIMES_SORTED"
 
-# HPC elapsed from sacct
 if which sacct >/dev/null 2>&1; then
   ELAPSED=$(sacct -j "$JOBID" --format=Elapsed --noheader -P 2>/dev/null | head -n1)
 else
@@ -69,7 +62,6 @@ else
 fi
 [ -z "$ELAPSED" ] && ELAPSED="UNKNOWN"
 
-# final_{JOBID}.txt
 FINAL_RES="$RESULTS_DIR/final_${JOBID}.txt"
 {
   echo "=== HPC Job $JOBID Final Report ==="

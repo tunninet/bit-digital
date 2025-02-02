@@ -30,15 +30,15 @@ Available partitions (detailed):
          - slurm-controller-2 (cpus=4, mem=14000, sockets=1, cores/socket=1, threads/core=1, state=IDLE)
       total_cpus=8, idle_cpus=8, total_memory=28000
 Choose a partition by number or name (or press ENTER for 'Tunninet'): [SingleJob] Partition='Tunninet', idle_cpus=64, node_count=4
-Use 64 cores across 4 nodes for prime-finding in [1..20000]? [Y/n] Aggregator wrote final report: /tn/5Net/raid-gold/private-git-code/hpc/results/final_173.txt
-Also created aggregated log => /tn/5Net/raid-gold/private-git-code/hpc/logs/final_173_aggregated.log
-Master prime list => /tn/5Net/raid-gold/private-git-code/hpc/results/final_173_primes_only.txt
+Use 64 cores across 4 node(s) for prime-finding in [1..20000]? [Y/n] Aggregator wrote final report: /tn/5Net/raid-gold/private-git-code/hpc/results/final_174.txt
+Also created aggregated log => /tn/5Net/raid-gold/private-git-code/hpc/logs/final_174_aggregated.log
+Master prime list => /tn/5Net/raid-gold/private-git-code/hpc/results/final_174_primes_only.txt
 HPC Elapsed: 00:00:02
-   -> Submitted single HPC job_id=173
-✅ Single HPC job submitted as job_id=173.
-Job 173 still in queue, waiting 5s ...
-Job 173 no longer in squeue => finished.
-Job 173 presumably finished. Running aggregator...
+   -> Submitted single HPC job_id=174
+✅ Single HPC job submitted as job_id=174
+Job 174 still in queue, waiting 5s ...
+Job 174 no longer in squeue => finished.
+Job 174 finished. Running aggregator...
 
 ==== End of test_chunked_slurm ====
 

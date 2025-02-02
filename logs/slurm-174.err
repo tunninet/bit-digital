@@ -27,10 +27,10 @@
 + echo 'DEBUG: RANGE_START=1'
 + echo 'DEBUG: RANGE_END=20000'
 + echo 'DEBUG: RUN_ID=Test'
-+ echo 'Multi-node HPC job started on partition=Tunninet, job_id=173'
++ echo 'Multi-node HPC job started on partition=Tunninet, job_id=174'
 + echo 'Nodes=4, tasks=64'
 + echo 'Range=[1..20000], run_id=Test'
 + srun -n 64 python /tn/5Net/raid-gold/private-git-code/hpc/modules/multi_node_prime_finder.py 1 20000 Test /tn/5Net/raid-gold/private-git-code/hpc/logs
-+ compgen -G '/tn/5Net/raid-gold/private-git-code/hpc/logs/job_173_rank_*.log'
++ compgen -G '/tn/5Net/raid-gold/private-git-code/hpc/logs/job_174_rank_*.log'
 + echo 'Partial rank logs found in /tn/5Net/raid-gold/private-git-code/hpc/logs'
-+ echo '✅ HPC job finished. Logs in /tn/5Net/raid-gold/private-git-code/hpc/logs, final results in /tn/5Net/raid-gold/private-git-code/hpc/results/final_173.txt'
++ echo '✅ HPC job finished. Logs in /tn/5Net/raid-gold/private-git-code/hpc/logs, final results in /tn/5Net/raid-gold/private-git-code/hpc/results/final_174.txt'
